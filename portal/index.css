@@ -1,0 +1,261 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+    background-image:url("https://images.unsplash.com/photo-1682685790910-1e3f5c7d8b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGFsJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8&w=1000&q=80");
+    color:white;
+
+    transition:1s;
+
+}
+
+.portal{
+
+    text-align:center;
+
+}
+
+.powers{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,150px);
+
+    gap:30px;
+
+}
+
+.power{
+
+
+    height:150px;
+
+    border-radius:20px;
+
+    border:none;
+
+
+    background:#111827;
+
+    color:white;
+
+
+    font-size:45px;
+
+
+    cursor:pointer;
+
+
+    position:relative;
+
+
+    transition:.4s;
+
+
+}
+
+.power:hover{
+
+    transform:translateY(-15px) scale(1.1);
+
+    box-shadow:
+    0 0 30px white;
+
+}
+
+.power:active{
+
+    transform:scale(.8);
+
+}
+
+.power:focus{
+
+    outline:4px solid cyan;
+
+}
+
+.power span{
+
+    display:block;
+
+    font-size:20px;
+
+}
+
+.power.active{
+
+
+    animation:pulse 1s infinite;
+
+
+}
+
+.power.active::before{
+
+    content:"+";
+    position:absolute;
+    top:-30px;
+    left:50%;
+    animation:rotate 2s infinite;
+
+}
+
+.power.active::after{
+
+    content:"activo";
+
+    position:absolute;
+
+    bottom:-35px;
+
+    left:0;
+
+    right:0;
+
+
+    color:gold;
+
+}
+
+.fire-theme{
+
+ background-image:url("./ChatGPT\ Image\ 24\ jul\ 2026\,\ 05_20_29\ p.m..png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
+  
+}
+
+
+
+.ice-theme{
+
+background:
+linear-gradient(#00c6ff,#0072ff);
+
+}
+
+
+
+.lightning-theme{
+
+background:
+linear-gradient(#654ea3,#eaafc8);
+
+}
+
+
+
+.nature-theme{
+
+background:
+linear-gradient(#56ab2f,#a8e063);
+
+}
+
+
+
+.dark-theme{
+
+background:
+linear-gradient(#000,#3b0764);
+
+}
+
+
+
+.light-theme{
+
+background:
+linear-gradient(#fff,#facc15);
+
+color:black;
+
+}
+
+
+
+
+.info{
+
+margin-top:50px;
+
+}
+
+
+
+.energy{
+
+width:300px;
+
+height:20px;
+
+background:#222;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+
+
+#bar{
+
+height:100%;
+
+width:0%;
+
+background:lime;
+
+transition:1s;
+
+}
+
+
+@keyframes pulse{
+
+
+50%{
+
+box-shadow:
+0 0 50px cyan;
+
+}
+
+
+}
+
+
+
+@keyframes rotate{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}

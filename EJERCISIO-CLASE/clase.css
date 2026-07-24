@@ -1,0 +1,57 @@
+.switche {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 9vh;
+    right: 50%;
+    width: 8%;
+    z-index: 1000;
+}
+
+.botoncito {
+    background-color: #FFAAA5;
+    width: 63.3%;
+    height: 50px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.2s;
+}
+
+.botoncito::before {
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 55px;
+    position: absolute;
+    content: "";
+
+    background-color: #FF8D8D;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+
+    transition: 0.2s;
+}
+
+input:checked .botoncito {
+    background-color: #FFAAA5;
+}
+
+input:checked+.botoncito::before {
+    transform: translate(-50px);
+    content: "";
+   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    position: absolute;
+}
+
+input {
+    display: none
+}
