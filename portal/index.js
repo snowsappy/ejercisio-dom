@@ -1,116 +1,93 @@
-const powers =document.querySelectorAll(".power");
+const cards = document.querySelectorAll(".card");
+const title = document.querySelector(".portal h1");
+cards.forEach(card => {
 
-const name =document.querySelector("#name");
-const bar =document.querySelector("#bar");
-
-powers.forEach(power=>{
-
-
-    power.addEventListener("click",()=>{
+    const cardInner = card.querySelector(".card-inner");
+    const power = card.querySelector(".power");
 
 
-        
+    card.addEventListener("mouseenter", () => {
 
-        powers.forEach(p=>{
-
-            p.classList.remove("active");
-
-        });
-
-
-
-      
-
-        power.classList.add("active");
-
-
-
-       
-
-        name.textContent =
-        power.innerText;
-
-
-
-
-        document.body.className="";
-
-
-
-        if(power.classList.contains("fire")){
-
-            document.body.classList.add(
-                "fire-theme"
-            );
-
-            bar.style.width="90%";
-
-        }
-
-
-
-        if(power.classList.contains("ice")){
-
-            document.body.classList.add(
-                "ice-theme"
-            );
-
-            bar.style.width="70%";
-
-        }
-
-
-
-        if(power.classList.contains("lightning")){
-
-            document.body.classList.add(
-                "lightning-theme"
-            );
-
-            bar.style.width="95%";
-
-        }
-
-
-
-        if(power.classList.contains("nature")){
-
-            document.body.classList.add(
-                "nature-theme"
-            );
-
-            bar.style.width="80%";
-
-        }
-
-
-
-        if(power.classList.contains("dark")){
-
-            document.body.classList.add(
-                "dark-theme"
-            );
-
-            bar.style.width="100%";
-
-        }
-
-
-
-        if(power.classList.contains("light")){
-
-            document.body.classList.add(
-                "light-theme"
-            );
-
-            bar.style.width="85%";
-
-        }
-
-
+        cardInner.classList.add("flip");
+        power.classList.add("glow");
 
     });
 
 
+    card.addEventListener("mouseleave", () => {
+
+        power.classList.remove("glow");
+
+        if(!power.classList.contains("active")){
+
+            cardInner.classList.remove("flip");
+
+        }
+
+    });
+
+
+    card.addEventListener("click", () => {
+
+
+        document.querySelectorAll(".power").forEach(p => {
+            p.classList.remove("active");
+        });
+
+        cardInner.classList.add("selected");
+            document.querySelectorAll(".card-inner").forEach(c => {
+                c.classList.remove("flip");
+            });
+
+            
+             title.className = ""
+            power.classList.add("active");
+
+            cardInner.classList.add("flip");
+
+
+
+            document.body.className = "";
+
+
+
+            if(power.classList.contains("fire")){
+
+                document.body.classList.add("fire-theme");
+                title.classList.add("fire-title");
+                
+            }
+
+            else if(power.classList.contains("ice")){
+
+                document.body.classList.add("ice-theme");
+                title.classList.add("ice-title");
+            }
+
+            else if(power.classList.contains("lightning")){
+
+                document.body.classList.add("lightning-theme");
+                 title.classList.add("lightning-title");
+            }
+
+            else if(power.classList.contains("nature")){
+
+                document.body.classList.add("nature-theme");
+                 title.classList.add("nature-title");
+            }
+
+            else if(power.classList.contains("dark")){
+
+                document.body.classList.add("dark-theme");
+                title.classList.add("dark-title");
+            }
+
+            else if(power.classList.contains("light")){
+
+                document.body.classList.add("light-theme");
+                title.classList.add("light-title");
+            }
+
+        });
 
 });

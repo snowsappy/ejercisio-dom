@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap');
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -6,74 +8,89 @@
 
 
 body{
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-    background-image:url("https://images.unsplash.com/photo-1682685790910-1e3f5c7d8b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGFsJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8&w=1000&q=80");
-    color:white;
-
+    background-image:url("/portal/FONDO\ NEUTRO.png");
     transition:1s;
-
+    background-size:cover;
+    font-family: 'jersey 10';
+   
 }
 
 .portal{
 
     text-align:center;
+   
 
 }
-
+.portal h1{
+    text-align:center;
+    font-size:6rem;
+    color:#362a2a;
+    padding-bottom:9%;
+    
+}
 .powers{
 
     display:grid;
 
-    grid-template-columns:repeat(3,150px);
+    grid-template-columns:repeat(3,160px);
 
-    gap:30px;
+    gap:50px;
 
 }
+.info{
+    margin:10%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    position:relative;
+    left:50%;
+    font-size:1rem;
+    transform:translateX(-50%);
+}
 
+.info h2{
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#493535;
+}
+.info p{
+    font-size:1.5rem;
+    color:#493535;
+}
 .power{
+    width:100%;
+    height: 100%;
 
-
-    height:150px;
-
-    border-radius:20px;
+    position:absolute;
+    top:0;
+    left:0;
 
     border:none;
-
-
-    background:#111827;
-
-    color:white;
-
-
-    font-size:45px;
-
+    border-radius:0;
 
     cursor:pointer;
-
-
-    position:relative;
-
+    overflow:hidden;
 
     transition:.4s;
 
+    backface-visibility:hidden;
+    
+}
+
+.power img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
 
 }
 
-.power:hover{
-
-    transform:translateY(-15px) scale(1.1);
-
-    box-shadow:
-    0 0 30px white;
-
-}
 
 .power:active{
 
@@ -95,23 +112,7 @@ body{
 
 }
 
-.power.active{
 
-
-    animation:pulse 1s infinite;
-
-
-}
-
-.power.active::before{
-
-    content:"+";
-    position:absolute;
-    top:-30px;
-    left:50%;
-    animation:rotate 2s infinite;
-
-}
 
 .power.active::after{
 
@@ -129,7 +130,49 @@ body{
     color:gold;
 
 }
+.card{
+    width:190px;
+    height:250px;
+    perspective:1000px;
+}
 
+.card-inner{
+    width:90%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform .9s;
+}
+
+.flip{
+    transform:rotateY(180deg);
+}
+
+.power,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    backface-visibility:hidden;
+    overflow:hidden;
+}
+
+.back{
+    transform:rotateY(180deg);
+     overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:end;
+    padding-bottom:40px;
+    font-size:2rem;
+    color:white;
+    border-radius:10px;
+    border:4px solid #493535;
+    background:#2c1e1e;
+
+}
 .fire-theme{
 
  background-image:url("./ChatGPT\ Image\ 24\ jul\ 2026\,\ 05_20_29\ p.m..png");
@@ -139,55 +182,47 @@ body{
   
 }
 
-
-
 .ice-theme{
 
-background:
-linear-gradient(#00c6ff,#0072ff);
+ background-image:url("./ChatGPT\ Image\ 27\ jul\ 2026\,\ 02_05_43\ p.m..png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 
 }
-
-
 
 .lightning-theme{
 
-background:
-linear-gradient(#654ea3,#eaafc8);
-
+ background-image:url("oscuridadfondo.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 }
-
-
 
 .nature-theme{
 
-background:
-linear-gradient(#56ab2f,#a8e063);
-
+ background-image:url("./fondobosque.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 }
-
-
 
 .dark-theme{
 
-background:
-linear-gradient(#000,#3b0764);
-
+ background-image:url("fondo oscuridad.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 }
-
-
 
 .light-theme{
 
-background:
-linear-gradient(#fff,#facc15);
-
-color:black;
+ background-image:url("fondo luz.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 
 }
-
-
-
 
 .info{
 
@@ -195,67 +230,187 @@ margin-top:50px;
 
 }
 
-
-
-.energy{
-
-width:300px;
-
-height:20px;
-
-background:#222;
-
-border-radius:20px;
-
-overflow:hidden;
-
+.flip{
+    transform:rotateY(180deg);
 }
 
+.card:active{
+    transform:scale(.8);
+}
 
+.power{
+    position:relative;
+}
+.power.active::before{
 
-#bar{
+    content:"";
 
-height:100%;
+    position:absolute;
 
-width:0%;
+    inset:0;
 
-background:lime;
+    background:rgba(255, 215, 0, 0.25);
 
-transition:1s;
+    pointer-events:none;
+
+    animation:pulse 1s infinite alternate;
 
 }
 
 
 @keyframes pulse{
 
+    from{
+        opacity:.3;
+    }
 
-50%{
-
-box-shadow:
-0 0 50px cyan;
-
-}
-
-
-}
-
-
-
-@keyframes rotate{
-
-
-from{
-
-transform:rotate(0deg);
+    to{
+        opacity:.8;
+    }
 
 }
 
+/*.card-inner.selected .back::after{
 
-to{
+    content:"";
 
-transform:rotate(360deg);
+    position:absolute;
+
+    inset:-5px;
+
+    border:4px solid gold;
+
+    pointer-events:none;
+
+}
+    */
+
+.back.fire-back::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("./fuego insignia.png");
+
+     background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
 
 }
 
+.back.ice-back::before{
 
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("Emblema de copo de nieve pixelado.png");
+
+     background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
+
+}
+
+.back.lightning-back::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("Rayo eléctrico en un fondo oscuro.png");
+
+     background-size:120%;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
+
+}
+
+.back.nature-back::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("Hoja verde luminosa en pixel art.png");
+
+    background-size:120%;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
+
+}
+
+.back.dark-back::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("Orbe oscuro con energía púrpura.png");
+
+    background-size:120%;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
+}
+.back.light-back::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("Estrella radiante en arte pixelado-Photoroom.png");
+
+     background-size:120%;
+    background-position:center;
+    background-repeat:no-repeat;
+    bottom:20%;
+    z-index:1;
+
+}
+
+.portal h1.fire-title{
+    color:#eee8e8;
+}
+
+.portal h1.ice-title{
+    color:rgb(10, 12, 32);
+}
+
+.portal h1.lightning-title{
+    color:rgb(230, 230, 230);
+}
+
+.portal h1.nature-title{
+    color:rgb(32, 24, 19);
+}
+
+.portal h1.dark-title{
+    color:rgb(230, 230, 230);
+}
+
+.portal h1.light-title{
+    color:rgb(65, 46, 46);
 }
