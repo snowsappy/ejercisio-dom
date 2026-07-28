@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eef2f7;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.notificacion{
+    width:280px;
+    padding:20px;
+
+    position:relative;
+
+    background:white;
+    border-radius:12px;
+
+    text-align:center;
+    font-size:1.2rem;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* El DOM hace aparecer este pseudoelemento */
+.notificacion.tiene-alertas::after{
+
+    content:"3";
+
+    position:absolute;
+
+    top:-8px;
+    right:-8px;
+
+    width:28px;
+    height:28px;
+
+    background:#e53935;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:.9rem;
+    font-weight:bold;
+}

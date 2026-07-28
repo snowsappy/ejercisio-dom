@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eef2f7;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.tarjeta{
+    width:320px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.tarjeta img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.tarjeta h2{
+    margin-bottom:10px;
+}
+
+.tarjeta p{
+    margin-bottom:20px;
+    color:#555;
+}
+
+.tarjeta button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#4a6cf7;
+    color:white;
+    cursor:pointer;
+}
+
+/* El mismo estilo se aplica con :hover o con la clase */
+.tarjeta:hover,
+.tarjeta.hover-emulado{
+    transform:scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+
+.tarjeta.presionado{
+
+    transform:scale(.95);
+
+    background:#dbe7ff;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+
+}

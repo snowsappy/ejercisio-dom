@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#eef2f7;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.boton-personalizado{
+    padding:18px 35px;
+
+    background:#4a6cf7;
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+}
+
+/* También funcionaría con :focus */
+.boton-personalizado:focus,
+.boton-personalizado.enfocado{
+
+    outline:4px solid orange;
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(255,165,0,.5);
+
+}

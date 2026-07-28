@@ -12,8 +12,6 @@ cards.forEach(card => {
         power.classList.add("glow");
 
     });
-
-
     card.addEventListener("mouseleave", () => {
 
         power.classList.remove("glow");
@@ -25,8 +23,6 @@ cards.forEach(card => {
         }
 
     });
-
-
     card.addEventListener("click", () => {
 
 
@@ -38,19 +34,12 @@ cards.forEach(card => {
             document.querySelectorAll(".card-inner").forEach(c => {
                 c.classList.remove("flip");
             });
-
-            
+  
              title.className = ""
             power.classList.add("active");
 
             cardInner.classList.add("flip");
-
-
-
             document.body.className = "";
-
-
-
             if(power.classList.contains("fire")){
 
                 document.body.classList.add("fire-theme");
