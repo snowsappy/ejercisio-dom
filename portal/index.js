@@ -4,7 +4,7 @@ cards.forEach(card => {
 
     const cardInner = card.querySelector(".card-inner");
     const power = card.querySelector(".power");
-
+    
 
     card.addEventListener("mouseenter", () => {
 
@@ -23,6 +23,16 @@ cards.forEach(card => {
         }
 
     });
+    card.addEventListener("mousedown",()=>{
+        alert("funciona")
+        card.classList.add("scalar")
+    })
+    card.addEventListener("mouseup",()=>{
+
+        card.classList.remove("scalar")
+
+
+    })
     card.addEventListener("click", () => {
 
 
